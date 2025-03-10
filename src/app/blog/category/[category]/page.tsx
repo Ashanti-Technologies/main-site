@@ -10,8 +10,10 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: { params: { category: string } }) {
-    const categoryName = params.category
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
+    const { category } = await params
+
+    const categoryName = category
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
@@ -22,9 +24,11 @@ export async function generateMetadata({ params }: { params: { category: string 
     };
 }
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+
+    const { category } = await params
     // Convert slug format back to category name
-    const categoryName = params.category
+    const categoryName = category
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
