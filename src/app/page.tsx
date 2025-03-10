@@ -6,6 +6,7 @@ import PageTransition from "@/components/ui/PageTransition";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import StaggeredContainer, { StaggeredItem } from "@/components/ui/StaggeredContainer";
 import HoverCard from "@/components/ui/HoverCard";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -42,10 +43,12 @@ export default function Home() {
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={0.2}>
-                <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
-                  <img
-                    src="/hero-image.png"
+                <div className="bg-white/10 rounded-xl backdrop-blur-sm">
+                  <Image
+                    src="/images/hero.jpg"
                     alt="IT Solutions"
+                    width={1920}
+                    height={1080}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
@@ -81,8 +84,15 @@ export default function Home() {
               </div>
               <div className="order-first md:order-last">
                 {/* Replace with your about image */}
-                <div className="bg-gray-100 rounded-lg p-8 h-96 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-blue-900">AT</div>
+                <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
+                  <Image
+                    src="/images/meeting.jpg"
+                    alt="IT Solutions"
+                    width={600}
+                    height={400}
+                    objectFit="cover"
+                    className="w-full h-full rounded-lg object-cover"
+                  />
                 </div>
               </div>
             </div>

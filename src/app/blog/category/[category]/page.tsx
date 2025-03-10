@@ -66,7 +66,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
                         <div className="text-center py-12">
                             <h2 className="text-2xl font-bold text-gray-700 mb-4">No articles found</h2>
                             <p className="text-gray-600 mb-8">
-                                We couldn't find any articles in this category. Check back later or browse our other categories.
+                                We couldn&apos;t find any articles in this category. Check back later or browse our other categories.
                             </p>
                             <Link
                                 href="/blog"
