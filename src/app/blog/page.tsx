@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, User, ArrowRight, Search } from "lucide-react";
+import { Calendar, ArrowRight, Search } from "lucide-react";
 import { getSortedPostsData, getCategories } from "@/lib/blog";
 import BlogCard from "@/components/BlogCard";
 
