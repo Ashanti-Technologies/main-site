@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const readline = require('readline');
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { join } from 'path';
+import { createInterface } from 'readline';
 
-const rl = readline.createInterface({
+const rl = createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
+const BLOG_DIR = join(process.cwd(), 'src/content/blog');
 
 // Ensure the blog directory exists
-if (!fs.existsSync(BLOG_DIR)) {
-    fs.mkdirSync(BLOG_DIR, { recursive: true });
+if (!existsSync(BLOG_DIR)) {
+    mkdirSync(BLOG_DIR, { recursive: true });
 }
 
 // Function to convert title to slug
@@ -62,8 +62,8 @@ More content...
 `;
 
     // Write the file
-    const filePath = path.join(BLOG_DIR, `${slug}.md`);
-    fs.writeFileSync(filePath, content);
+    const filePath = join(BLOG_DIR, `${slug}.md`);
+    writeFileSync(filePath, content);
 
     console.log(`\n✅ Blog post created successfully at ${filePath}`);
     console.log(`\n💡 Don't forget to add a cover image at public/images/blog/${slug}.jpg`);
