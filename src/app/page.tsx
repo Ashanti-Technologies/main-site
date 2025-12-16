@@ -81,6 +81,10 @@ export default function Home() {
                     name: "DAI Africa",
                     src: "/clients/dai_africa.svg",
                   },
+                  {
+                    name: "Phanet",
+                    src: "/clients/phanet.png",
+                  },
                 ].map((client) => (
                   <div
                     key={client.name}
